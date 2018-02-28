@@ -6,12 +6,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Welcome to the Home Page!!!!</h1>
-	<h2>Please find the User below</h2>
-	<table border="">
-		<tr th:each="listPerson:${salesPersonList}">
-			<td th:text="${listPerson.firstName}"></td>
-		</tr>
-	</table>
+	<div>
+		<h1>Welcome to the Home Page!!!!</h1>
+		<div>
+			<p>Please enter "/AddSalesPerson" in the URL to the create the
+				entries to the DB</p>
+		</div>
+		<div>
+			<p>After adding sales persons to the DB enter "/SalesPersons" to view the list of SalesPersons</p>
+		</div>
+
+
+	</div>
+
+
 </body>
 </html>

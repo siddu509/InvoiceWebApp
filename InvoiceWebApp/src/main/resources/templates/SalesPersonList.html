@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
@@ -36,10 +37,25 @@
 	</div>
 	<div>
 		<table>
+			<div>
+			<tr>
+				<td>FirstName</td>
+				<td>LastName</td>
+				<td>Vendor</td>
+				<td>TotalHours</td>
+				<td>Invoice Number</td>
+			</tr>
+			</div>
+
+			<div>
 			<tr th:each="salesPerson:${salesPersonList}">
 				<td th:text="${salesPerson.firstName}"></td>
-
+				<td th:text="${salesPerson.lastName}"></td>
+				<td th:text="${salesPerson.vendor}"></td>
+				<td th:text="${salesPerson.hours}"></td>
+				<td th:text="${salesPerson.invoiceNumber}"></td>
 			</tr>
+			</div>
 		</table>
 	</div>
 </body>
