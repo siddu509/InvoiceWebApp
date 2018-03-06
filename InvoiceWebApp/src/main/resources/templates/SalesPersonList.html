@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
@@ -8,45 +7,13 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous"></link>
+<link rel="stylesheet" href="../../css/SalesPerson.css"
+	th:href="@{/css/SalesPerson.css}" type="text/css"></link>
+
+
 <title>Validating Timesheets</title>
-	<style>
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
 
-    /* Modal Content/Box */
-    .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
-    }
 
-    /* The Close Button */
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    </style>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-inverse">
@@ -74,17 +41,15 @@
 		<h2>Employer Timesheets Validation</h2>
 	</div>
 	<div>
-		<table>
+		<table class="table">
 
 			<tr>
-				<td>FirstName</td>
-				<td>LastName</td>
-				<td>Vendor</td>
-				<td>TotalHours</td>
-				<td>Invoice Number</td>
+				<th scope="col">FIRSTNAME</th>
+				<th scope="col">LASTNAME</th>
+				<th scope="col">VENDOR</th>
+				<th scope="col">TOTAL HOURS</th>
+				<th scope="col">INVOICE NUMBER</th>
 			</tr>
-
-
 
 			<tr th:each="salesPerson:${salesPersonList}">
 				<td th:text="${salesPerson.firstName}"></td>
@@ -92,48 +57,18 @@
 				<td th:text="${salesPerson.vendor}"></td>
 				<td th:text="${salesPerson.hours}"></td>
 				<td th:text="${salesPerson.invoiceNumber}"></td>
+				<td><button type="button" class="btn btn-info" onclick="">Verify</button></td>
+				<td><button type="button" class="btn btn-danger">Update</button></td>
+				<td><button type="button" class="btn btn-success">Save</button></td>
 			</tr>
 
 		</table>
 	</div>
+	<div>
+		<script th:src="@{/js/SalesPerson.js}">
+			
+		</script>
+	</div>
 </body>
 </html>
-
-<script>
-function searchFunction() {
-    // Declaring variables
-    var input, filter, ul, li, a, i;
-    input = document.getElementById('searchEmp');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("empList");
-    li = ul.getElementsByTagName('li');
-
-    // Looping through all list items, and hide those which don't match!
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-</script>
-
-<script>
-  var modal = document.getElementById('popupModal');
-  var emp = document.getElementById("employerList");
-  var span = document.getElementsByClassName("close")[0];
-  emp.onclick = function() {
-      modal.style.display = "block";
-  }
-  span.onclick = function() {
-      modal.style.display = "none";
-  }
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
-</script>
 
