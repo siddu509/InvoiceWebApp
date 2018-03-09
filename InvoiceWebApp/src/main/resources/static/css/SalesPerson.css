@@ -40,4 +40,9 @@ table, tr, td, th {
 	border: 2px solid black;
 	padding: 2px;
 	text-align: center;
+
+}
+
+.selected{
+    background-color: yellow;
 }

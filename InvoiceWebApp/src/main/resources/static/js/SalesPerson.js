@@ -20,7 +20,40 @@ function searchFunction() {
     }
 }
 
+//function retrieveData(){
+//    //Declare Variable
+//    var table = document.getElementById("salesList");
+//    for var(i=0, row; row=table.rows[i]; i++){
+//
+//    }
+//}
 
+//$('salesList tr').each(function(){
+//    $(this).find('td:last-child').each(function(){
+//    alert($(this).html());
+//    })
+//})
+
+//function retrieveData(){
+//    var table = document.getElementById("salesList").addEventListener("click");
+//    var k = table.rows.length;
+//    var l = table.rows[r].cells.length;
+//    for var(i=0, i< k; i++){
+//    for var(j =0, l<j; j++){
+//    alert(table.cells[L].innerHTML);
+//    }
+//    }
+//}
+
+$('sList').click(function(){
+    $('.selected').removeClass('selected');
+    $(this).addClass('selected');
+})
+$('#verify').click(function(){
+    $('.selected').childred().each(function()){
+    alert($(this).innerHTML());
+    }
+})
 
 var modal = document.getElementById('popupModal');
 var emp = document.getElementById("employerList");
